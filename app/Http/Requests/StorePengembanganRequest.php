@@ -42,6 +42,14 @@ class StorePengembanganRequest extends FormRequest
             'capture_frontend' => ['nullable', 'file', 'mimes:jpg,jpeg,png', 'max:100000'],
             'capture_backend' => ['nullable', 'file', 'mimes:jpg,jpeg,png', 'max:100000'],
             'user_id' => ['required'],
+
+            // Declare field untuk insert ke sdmpengembangs:
+            'nama_pengembang' => ['required', 'string', 'max:255'],
+            'alamat_pengembang' => ['nullable', 'string'],
+            'nohp_pengembang' => ['required', 'string', 'max:20'],
+            'nokantor_pengembang' => ['nullable', 'string', 'max:20'],
+            'email_pengembang' => ['nullable', 'email', 'max:255'],
         ];
     }
+
 }

@@ -42,6 +42,14 @@ class UpdatePengembanganRequest extends FormRequest
             'capture_frontend' => ['nullable', 'file', 'mimes:jpg,jpeg,png', 'max:100000'],
             'capture_backend' => ['nullable', 'file', 'mimes:jpg,jpeg,png', 'max:100000'],
             'user_id' => ['required'],
+
+            'application_id' => ['sometimes'],
+            'nama_pengembang' => ['sometimes', 'string'],
+            'alamat_pengembang' => ['nullable', 'string', 'min:5', 'max:1000'],
+            'nohp_pengembang' => ['sometimes', 'string', 'regex:/^(\+62|62|0)8[1-9][0-9]{6,10}$/'],
+            'nokantor_pengembang' => ['nullable', 'numeric', 'digits_between:10,13'],
+            'email_pengembang' => ['nullable', 'email', 'unique:users,email'],
+
         ];
     }
 }

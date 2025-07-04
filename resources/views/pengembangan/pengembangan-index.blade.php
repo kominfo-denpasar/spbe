@@ -272,7 +272,7 @@
 
                     <!-- Tabs Menu dalam Modal -->
                     <hr>
-                    <ul class="nav nav-tabs px-3" id="tabDetail{{ $pengembangan->id }}" role="tablist">
+                    <!-- <ul class="nav nav-tabs px-3" id="tabDetail{{ $pengembangan->id }}" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active" id="vendor-tab{{ $pengembangan->id }}" data-toggle="tab"
                                 href="#vendor{{ $pengembangan->id }}" role="tab" aria-controls="vendor"
@@ -293,46 +293,32 @@
                                 href="#staging3{{ $pengembangan->id }}" role="tab" aria-controls="staging3"
                                 aria-selected="false">Staging3</a>
                         </li>
-                    </ul>
+                    </ul> -->
                     <div class="tab-content pt-3 px-3" id="tabContentDetail{{ $pengembangan->id }}">
 
                         <div class="tab-pane fade show active" id="vendor{{ $pengembangan->id }}" role="tabpanel"
                             aria-labelledby="vendor-tab{{ $pengembangan->id }}">
                             <!-- TABEL VENDOR -->
-                            <div class="table-responsive">
+                            <h5 class="vendor-title mb-3" id="VendorLabel">
+                                <strong>Data Vendor Pengembangan</strong>
+                            </h5>
 
-                                <a href="###" class="btn btn-primary mb-3">
-                                    <i class="fas fa-plus"></i> Add Vendor
-                                </a>
-                                <table class="table table-bordered table-hover">
-                                    <thead>
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover">
+                                    <thead class="thead-dark text-center">
                                         <tr>
-                                            <th>#</th>
-                                            <th>Action</th>
-                                            <th>Nama Pengembang</th>
+                                            <th style="width: 5%;">#</th>
+                                            <th>Nama Vendor</th>
                                             <th>Alamat</th>
-                                            <th>No HP</th>
-                                            <th>No Kantor</th>
+                                            <th>No. HP</th>
+                                            <th>No. Kantor</th>
                                             <th>Email</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @forelse ($pengembangan->sdmpengembang as $i => $sdm)
                                             <tr>
-                                                <td>{{ $i + 1 }}</td>
-                                                <td style="white-space: nowrap; text-align: center;">
-                                                    <a href="#" class="btn btn-light btn-sm" title="Edit">
-                                                        <i class="fas fa-edit"></i>
-                                                    </a>
-                                                    <form action="#" method="POST" style="display: inline-block;">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit" class="btn btn-light btn-sm show_confirm"
-                                                            title="Delete">
-                                                            <i class="fas fa-trash"></i>
-                                                        </button>
-                                                    </form>
-                                                </td>
+                                                <td class="text-center">{{ $i + 1 }}</td>
                                                 <td>{{ $sdm->nama_pengembang }}</td>
                                                 <td>{{ $sdm->alamat_pengembang }}</td>
                                                 <td>{{ $sdm->nohp_pengembang }}</td>
@@ -341,10 +327,10 @@
                                             </tr>
                                         @empty
                                             <tr>
-                                                <td colspan="6" class="text-center">Belum ada data vendor</td>
+                                                <td colspan="6" class="text-center text-muted">Belum ada data vendor.</td>
                                             </tr>
                                         @endforelse
-                                    </tbody>
+                                </tbody>
                                 </table>
                             </div>
                         </div>

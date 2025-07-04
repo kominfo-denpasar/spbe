@@ -379,6 +379,93 @@
                                         </span>
                                     @enderror
                                 </div>
+
+                                {{--Field insert to Vendor --}}
+                                <br>
+                                <div class="section-title mt-0">Vendor</div>
+                                <hr>
+                                <div class="card-body">
+                                    {{-- <input type="hidden" class="form-control @error('application_id') is-invalid @enderror"
+                                        name="pengembangan_id" value="{{ old('pengembangan_id', $pengembangan->id) }}" readonly
+                                        autocomplete="pengembangan_id" placeholder="{{ __('ID Pengembangan') }}">
+                                    @error('pengembangan_id')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror --}}
+                                    
+                                    <div class="form-group col-md-6 col-12">
+                                        <label>{{ __('Nama Vendor') }}</label>
+                                        <input type="text"
+                                            class="form-control @error('nama_pengembang') is-invalid @enderror"
+                                            name="nama_pengembang"
+                                            value="{{ old('nama_pengembang', $vendor?->nama_pengembang) }}"
+                                            required autocomplete="nama_pengembang"
+                                            placeholder="{{ __('Nama Vendor') }}">
+                                        @error('nama_pengembang')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                    <div id="alamat_pengembang" class="form-group col-md-8 col-12">
+                                        <label>{{ __('Alamat Vendor') }}</label>
+                                        <textarea class="form-control @error('alamat_pengembang') is-invalid @enderror"
+                                            name="alamat_pengembang"
+                                            id="alamat_pengembang"
+                                            autocomplete="alamat_pengembang"
+                                            placeholder="{{ __('Alamat Vendor') }}"
+                                            style="height: 100px;">{{ old('alamat_pengembang', $vendor?->alamat_pengembang) }}</textarea>
+                                        @error('alamat_pengembang')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group col-md-6 col-12">
+                                        <label>{{ __('No HP Vendor') }}</label>
+                                        <input type="text"
+                                            class="form-control @error('nohp_pengembang') is-invalid @enderror"
+                                            name="nohp_pengembang"
+                                            value="{{ old('nohp_pengembang', $vendor?->nohp_pengembang) }}"
+                                            required autocomplete="nohp_pengembang"
+                                            placeholder="{{ __('No HP Vendor') }}">
+                                        @error('nohp_pengembang')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group col-md-5 col-12">
+                                        <label>{{ __('No Kantor Vendor') }}</label>
+                                        <input type="text"
+                                            class="form-control @error('nokantor_pengembang') is-invalid @enderror"
+                                            name="nokantor_pengembang"
+                                            value="{{ old('nokantor_pengembang', $vendor?->nokantor_pengembang) }}"
+                                            autocomplete="nokantor_pengembang"
+                                            placeholder="{{ __('No Kantor Vendor') }}">
+                                        @error('nokantor_pengembang')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group col-md-5 col-12">
+                                        <label>{{ __('Email Vendor') }}</label>
+                                        <input type="text"
+                                            class="form-control @error('email_pengembang') is-invalid @enderror"
+                                            name="email_pengembang"
+                                            value="{{ old('email_pengembang', $vendor?->email_pengembang) }}"
+                                            autocomplete="email_pengembang"
+                                            placeholder="{{ __('Email Vendor') }}">
+                                        @error('email_pengembang')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </div>
+
                             </div>
                             <div class="card-footer text-left">
                                 <a href="{{ route('admin.application.show', $application->id) }}""
