@@ -299,13 +299,6 @@
             $('#exportSearch').val($('#customSearch').val());
         });
 
-        const urlParams = new URLSearchParams(window.location.search);
-        const opdParam = urlParams.get('opd');
-
-        if (opdParam) {
-            $('#filterOPD').val(opdParam).trigger('change');
-            applyCustomFilterAndLimit();
-        }
     });
 </script>
 @endpush
